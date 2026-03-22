@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, join_room, leave_room
 import random, string
 
+
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='gevent')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'gamearena-secret-2024'
 socketio = SocketIO(app, cors_allowed_origins="*")
